@@ -42,6 +42,7 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
                     setRestaurants(parsed.restaurants);
                     setTopRestaurants(parsed.topRestaurants || []);
                     setBestDishes(parsed.bestDishes || []);
+                    setLoading(false); // Instantly hide the spinner since we have cache!
                     hasCache = true;
                 }
             } catch (e) {

@@ -46,10 +46,27 @@ const Navbar = ({ onOpenCart, onOpenAuth }) => {
                     }}
                     style={{display: 'flex', alignItems: 'center', gap: '15px', textDecoration: 'none'}}
                 >
-                    <img src="/r8-logo.png" alt="R8 Icon" style={{height: '42px', width: 'auto', objectFit: 'contain'}} />
-                    <div style={{display: 'flex', flexDirection: 'column'}}>
-                        <span className="luxury-logo-text" style={{fontSize: '20px', lineHeight: '1', marginBottom: '4px'}}>RYE-8</span>
-                        <span style={{fontSize: '10px', color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: '600'}}>Exceptional Meals, Every Time.</span>
+                    <div style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
+                        <div style={{
+                            fontSize: '28px', 
+                            fontWeight: '300', 
+                            letterSpacing: '6px', 
+                            fontFamily: '"Didot", "Bodoni MT", "Optima", "Times New Roman", serif',
+                            color: 'var(--text-primary)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            lineHeight: '1'
+                        }}>
+                            RYE<span style={{color: 'var(--color-primary)', fontWeight: '600', marginLeft: '2px'}}>-8</span>
+                        </div>
+                        <span style={{
+                            fontSize: '9px', 
+                            color: 'var(--text-secondary)', 
+                            letterSpacing: '3px', 
+                            textTransform: 'uppercase', 
+                            fontWeight: '500',
+                            paddingLeft: '2px'
+                        }}>Exceptional Meals, Every Time.</span>
                     </div>
                 </Link>
 

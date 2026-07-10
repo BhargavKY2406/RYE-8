@@ -13,9 +13,11 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
 
     const topRef = useRef(null);
     const [showTopBtn, setShowTopBtn] = useState(false);
+    const [offsetY, setOffsetY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
+            setOffsetY(window.pageYOffset);
             if (window.scrollY > 400) setShowTopBtn(true);
             else setShowTopBtn(false);
         };
@@ -171,14 +173,14 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
                         </div>
                     </div>
 
-                    <div className="hero-visual">
+                    <div className="hero-visual" style={{ transform: `translateY(${offsetY * 0.15}px)`, transition: 'transform 0.1s out' }}>
                         <div className="hero-glow-ring"></div>
                         <div className="hero-bento-grid">
                             <div className="bento-main bento-card">
                                 <img src="/images/hero_1.jpg" alt="Luxury Food" className="bento-img" />
                                 <div className="bento-glass-shine"></div>
                             </div>
-                            <div className="bento-side">
+                            <div className="bento-side" style={{ transform: `translateY(${offsetY * -0.1}px)` }}>
                                 <div className="bento-sub bento-card bento-top">
                                     <img src="/images/hero_2.jpg" alt="Chef" className="bento-img" />
                                     <div className="bento-glass-shine"></div>
@@ -245,9 +247,10 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
                 </div>
 
                 {loading ? (
-                    <div className="loading-spinner">
-                        <div className="spinner"></div>
-                        <p>Finding the best food...</p>
+                    <div className="restaurant-grid">
+                        {[1, 2, 3, 4, 5, 6].map(i => (
+                            <div key={i} className="restaurant-card skeleton" style={{ height: '380px' }}></div>
+                        ))}
                     </div>
                 ) : filteredBySearch.length > 0 ? (
                     <div className="restaurant-grid">

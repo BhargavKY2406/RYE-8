@@ -29,6 +29,7 @@ const MenuCard = ({ item, restaurantId, restaurantName }) => {
                     src={item.imagePath || fallbackImage} 
                     alt={item.itemName} 
                     className="menu-image"
+                    loading="lazy"
                     onError={(e) => { e.target.src = fallbackImage; }}
                 />
                 {!item.isAvailable && <div className="unavailable-overlay">Sold Out</div>}

@@ -27,6 +27,7 @@ const RestaurantCard = ({ restaurant }) => {
                     src={restaurant.imagePath || fallbackImage} 
                     alt={restaurant.name} 
                     className="restaurant-img"
+                    loading="lazy"
                     onError={(e) => { e.target.src = fallbackImage; }}
                 />
                 {restaurant.cuisineType && (

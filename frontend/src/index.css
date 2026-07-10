@@ -63,6 +63,21 @@
   --transition-slow: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* ================================================================
+   SKELETON LOADERS
+   ================================================================ */
+@keyframes shimmerPulse {
+  0% { background-color: var(--bg-surface-2); }
+  50% { background-color: var(--bg-surface-hover); }
+  100% { background-color: var(--bg-surface-2); }
+}
+
+.skeleton {
+  animation: shimmerPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  border-radius: var(--radius-sm);
+}
+
+
 [data-theme='light'] {
   /* Ultra-Premium Light Mode - "Porcelain & Platinum" */
   --bg-main: #FCFBF9; 
@@ -152,8 +167,8 @@ body::after {
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
+  font-family: "Didot", "Bodoni MT", "Optima", "Cinzel", "Times New Roman", serif;
+  font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1.25;
 }

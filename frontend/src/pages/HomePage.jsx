@@ -65,35 +65,22 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
                 API.getTopRestaurants(),
                 API.getBestDishes()
             ]);
-            
-            // Fail-safe to remove any duplicates that the backend might send
-            const filterUnique = (arr, key) => {
-                if (!arr) return [];
-                const seen = new Set();
-                return arr.filter(item => {
-                    const k = item[key];
-                    return seen.has(k) ? false : seen.add(k);
-                });
-            };
 
             if (res.success) {
-                const uniqueRes = filterUnique(res.data, 'name');
-                setRestaurants(uniqueRes);
+                setRestaurants(res.data || []);
             }
             if (topRes.success) {
-                const uniqueTop = filterUnique(topRes.data, 'name');
-                setTopRestaurants(uniqueTop);
+                setTopRestaurants(topRes.data || []);
             }
             if (bestRes.success) {
-                const uniqueBest = filterUnique(bestRes.data, 'itemName');
-                setBestDishes(uniqueBest);
+                setBestDishes(bestRes.data || []);
             }
             
-            // Save to cache for instant loading next time!
+            // Save to cache for instant loading next time
             localStorage.setItem('rye8_home_cache', JSON.stringify({
-                restaurants: res.success ? filterUnique(res.data, 'name') : [],
-                topRestaurants: topRes.success ? filterUnique(topRes.data, 'name') : [],
-                bestDishes: bestRes.success ? filterUnique(bestRes.data, 'itemName') : []
+                restaurants: res.success ? (res.data || []) : [],
+                topRestaurants: topRes.success ? (topRes.data || []) : [],
+                bestDishes: bestRes.success ? (bestRes.data || []) : []
             }));
         } catch (error) {
             console.error('Failed to fetch restaurants:', error);
@@ -106,21 +93,12 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
         setActiveCuisine(cuisine);
         setLoading(true);
         try {
-            const filterUnique = (arr, key) => {
-                if (!arr) return [];
-                const seen = new Set();
-                return arr.filter(item => {
-                    const k = item[key];
-                    return seen.has(k) ? false : seen.add(k);
-                });
-            };
-
             if (cuisine === 'All') {
                 const res = await API.getRestaurants();
-                setRestaurants(filterUnique(res.data, 'name') || []);
+                setRestaurants(res.data || []);
             } else {
                 const res = await API.filterByCuisine(cuisine);
-                setRestaurants(filterUnique(res.data, 'name') || []);
+                setRestaurants(res.data || []);
             }
         } catch (error) {
             console.error('Failed to filter:', error);

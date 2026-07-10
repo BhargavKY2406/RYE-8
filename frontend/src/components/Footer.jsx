@@ -9,12 +9,31 @@ const Footer = () => {
             <div className="footer-container">
                 <div className="footer-grid">
                     <div className="footer-col brand-col">
-                    <Link to="/" className="footer-logo nav-logo" style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', textDecoration: 'none'}}>
-                        <img src="/rye8-icon.png" alt="R8 Icon" style={{height: '50px', width: 'auto', objectFit: 'contain'}} />
-                        <div style={{display: 'flex', flexDirection: 'column'}}>
-                            <span className="luxury-logo-text" style={{fontSize: '24px', lineHeight: '1', marginBottom: '4px'}}>RYE-8</span>
-                            <span style={{fontSize: '11px', color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: '600'}}>Exceptional Meals, Every Time.</span>
+                    <Link to="/" className="footer-logo nav-logo" style={{display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '20px', textDecoration: 'none'}}>
+                        <div style={{
+                            fontSize: '28px', 
+                            fontWeight: '400', 
+                            letterSpacing: '8px', 
+                            fontFamily: '"Didot", "Bodoni MT", "Optima", "Times New Roman", serif',
+                            background: 'linear-gradient(120deg, #c5a059 0%, #ffd770 35%, #c5a059 70%, #8b6914 100%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                            color: 'transparent',
+                            display: 'inline-block',
+                            lineHeight: '1.1',
+                            paddingRight: '8px'
+                        }}>
+                            RYE-8
                         </div>
+                        <span style={{
+                            fontSize: '10px', 
+                            color: 'var(--text-secondary)', 
+                            letterSpacing: '3px', 
+                            textTransform: 'uppercase', 
+                            fontWeight: '500',
+                            paddingLeft: '2px'
+                        }}>Exceptional Meals, Every Time.</span>
                     </Link>
                     <p className="footer-tagline">
                         Experience the best restaurants in your city. From local favorites to global cuisines, get it hot and fresh to your door.

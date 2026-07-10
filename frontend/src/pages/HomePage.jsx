@@ -89,54 +89,70 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
     return (
         <div className="home-page" ref={topRef}>
             <section className="hero">
-                <div className="hero-content">
-                    <span className="hero-badge">⭐ Quality Assured</span>
-                    <h1 className="hero-title">
-                        The Standards of Fine Dining.<br />
-                        <span className="hero-highlight gold-text-shimmer">The Comfort of Your Home.</span>
-                    </h1>
-                    <p className="hero-text">
-                        Experience the best restaurants in your city. Our main focus is uncompromising quality and delivering an unforgettable taste to your door.
-                    </p>
+                <div className="hero-container">
+                    <div className="hero-content">
+                        <div className="hero-badge-wrap">
+                            <span className="hero-badge">
+                                <span className="badge-dot"></span> Michelin-Star Quality
+                            </span>
+                        </div>
+                        <h1 className="hero-title">
+                            The Pinnacle of Fine Dining.<br />
+                            <span className="hero-highlight gold-text-shimmer">At Your Doorstep.</span>
+                        </h1>
+                        <p className="hero-text">
+                            Curated culinary masterpieces from the city's most exclusive kitchens, delivered with white-glove precision.
+                        </p>
 
-                    <div className="hero-search-box">
-                        <Search className="hero-search-icon" size={20} />
-                        <input 
-                            type="text" 
-                            className="hero-search-input"
-                            placeholder="What are you craving today?" 
-                            value={searchQuery || ''}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                        />
-                        <button className="btn-primary hero-search-btn" onClick={handleSearch}>Search</button>
+                        <div className="hero-search-box">
+                            <Search className="hero-search-icon" size={22} />
+                            <input 
+                                type="text" 
+                                className="hero-search-input"
+                                placeholder="What are you craving today?" 
+                                value={searchQuery || ''}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                            />
+                            <button className="btn-primary hero-search-btn" onClick={handleSearch}>Discover</button>
+                        </div>
+                        
+                        <div className="hero-stats">
+                            <div className="stat-item">
+                                <span className="stat-number">500+</span>
+                                <span className="stat-label">Luxury Venues</span>
+                            </div>
+                            <div className="stat-divider"></div>
+                            <div className="stat-item">
+                                <span className="stat-number">30m</span>
+                                <span className="stat-label">White-Glove Delivery</span>
+                            </div>
+                            <div className="stat-divider"></div>
+                            <div className="stat-item">
+                                <span className="stat-number">4.9<Star size={18} className="star-icon" fill="currentColor"/></span>
+                                <span className="stat-label">Client Satisfaction</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div className="hero-stats">
-                        <div className="stat-item">
-                            <span className="stat-number">500+</span>
-                            <span className="stat-label">Restaurants</span>
-                        </div>
-                        <div className="stat-divider"></div>
-                        <div className="stat-item">
-                            <span className="stat-number">30m</span>
-                            <span className="stat-label">Avg Delivery</span>
-                        </div>
-                        <div className="stat-divider"></div>
-                        <div className="stat-item">
-                            <span className="stat-number">4.8<Star size={16} className="star-icon" fill="currentColor"/></span>
-                            <span className="stat-label">Avg Rating</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div className="hero-visual">
-                    <div className="blob blob-1"></div>
-                    <div className="blob blob-2"></div>
-                    <div className="hero-images">
-                        <img src="/images/hero_1.jpg" alt="Food" className="hero-img img-1" />
-                        <img src="/images/hero_2.jpg" alt="Food" className="hero-img img-2" />
-                        <img src="/images/hero_3.jpg" alt="Food" className="hero-img img-3" />
+                    <div className="hero-visual">
+                        <div className="hero-glow-ring"></div>
+                        <div className="hero-bento-grid">
+                            <div className="bento-main bento-card">
+                                <img src="/images/hero_1.jpg" alt="Luxury Food" className="bento-img" />
+                                <div className="bento-glass-shine"></div>
+                            </div>
+                            <div className="bento-side">
+                                <div className="bento-sub bento-card bento-top">
+                                    <img src="/images/hero_2.jpg" alt="Chef" className="bento-img" />
+                                    <div className="bento-glass-shine"></div>
+                                </div>
+                                <div className="bento-sub bento-card bento-bottom">
+                                    <img src="/images/hero_3.jpg" alt="Dessert" className="bento-img" />
+                                    <div className="bento-glass-shine"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

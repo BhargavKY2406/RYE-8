@@ -49,15 +49,19 @@ const Navbar = ({ onOpenCart, onOpenAuth }) => {
                     <div style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
                         <div style={{
                             fontSize: '28px', 
-                            fontWeight: '300', 
-                            letterSpacing: '6px', 
+                            fontWeight: '400', 
+                            letterSpacing: '8px', 
                             fontFamily: '"Didot", "Bodoni MT", "Optima", "Times New Roman", serif',
-                            color: 'var(--text-primary)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            lineHeight: '1'
+                            background: 'linear-gradient(110deg, #D4AF37 0%, #FFF2CD 35%, #D4AF37 70%, #8A6B0B 100%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                            color: 'transparent',
+                            display: 'inline-block',
+                            lineHeight: '1.1',
+                            paddingRight: '8px'
                         }}>
-                            RYE<span style={{color: 'var(--color-primary)', fontWeight: '600', marginLeft: '2px'}}>-8</span>
+                            RYE-8
                         </div>
                         <span style={{
                             fontSize: '9px', 

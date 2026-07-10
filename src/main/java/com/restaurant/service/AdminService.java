@@ -91,6 +91,7 @@ public class AdminService {
                 order.getTotalAmount(),
                 order.getDeliveryFee(),
                 order.getAppFee(),
+                order.getGstAmount(),
                 order.getStatus().name(),
                 order.getPaymentMethod().name(),
                 itemDTOs

@@ -33,6 +33,9 @@ public class OrderTable {
 
     @Column(name = "AppFee", nullable = false, precision = 10, scale = 2)
     private BigDecimal appFee = BigDecimal.ZERO;
+    
+    @Column(name = "GSTAmount", nullable = false, precision = 10, scale = 2)
+    private BigDecimal gstAmount = BigDecimal.ZERO;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "Status", nullable = false, length = 20)
@@ -90,6 +93,9 @@ public class OrderTable {
 
     public BigDecimal getAppFee() { return this.appFee; }
     public void setAppFee(BigDecimal appFee) { this.appFee = appFee; }
+    
+    public BigDecimal getGstAmount() { return this.gstAmount; }
+    public void setGstAmount(BigDecimal gstAmount) { this.gstAmount = gstAmount; }
 
     public OrderStatus getStatus() { return this.status; }
     public void setStatus(OrderStatus status) { this.status = status; }
@@ -117,6 +123,7 @@ public class OrderTable {
         private BigDecimal totalAmount;
         private BigDecimal deliveryFee;
         private BigDecimal appFee;
+        private BigDecimal gstAmount;
         private OrderStatus status;
         private PaymentMethod paymentMethod;
         private AppUser user;
@@ -128,6 +135,7 @@ public class OrderTable {
         public OrderTableBuilder totalAmount(BigDecimal totalAmount) { this.totalAmount = totalAmount; return this; }
         public OrderTableBuilder deliveryFee(BigDecimal deliveryFee) { this.deliveryFee = deliveryFee; return this; }
         public OrderTableBuilder appFee(BigDecimal appFee) { this.appFee = appFee; return this; }
+        public OrderTableBuilder gstAmount(BigDecimal gstAmount) { this.gstAmount = gstAmount; return this; }
         public OrderTableBuilder status(OrderStatus status) { this.status = status; return this; }
         public OrderTableBuilder paymentMethod(PaymentMethod paymentMethod) { this.paymentMethod = paymentMethod; return this; }
         public OrderTableBuilder user(AppUser user) { this.user = user; return this; }
@@ -141,6 +149,7 @@ public class OrderTable {
             orderTable.setTotalAmount(this.totalAmount);
             orderTable.setDeliveryFee(this.deliveryFee != null ? this.deliveryFee : BigDecimal.ZERO);
             orderTable.setAppFee(this.appFee != null ? this.appFee : BigDecimal.ZERO);
+            orderTable.setGstAmount(this.gstAmount != null ? this.gstAmount : BigDecimal.ZERO);
             orderTable.setStatus(this.status);
             orderTable.setPaymentMethod(this.paymentMethod);
             orderTable.setUser(this.user);

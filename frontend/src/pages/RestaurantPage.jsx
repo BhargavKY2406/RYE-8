@@ -15,6 +15,7 @@ const RestaurantPage = ({ onOpenAuth }) => {
     const [isReservationOpen, setIsReservationOpen] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetchData();
     }, [id]);
 

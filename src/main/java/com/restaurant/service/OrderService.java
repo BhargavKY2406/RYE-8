@@ -95,8 +95,8 @@ public class OrderService {
             throw new IllegalArgumentException("Invalid payment method: " + dto.paymentMethod());
         }
 
-        BigDecimal deliveryFee = BigDecimal.valueOf(40.00);
-        BigDecimal appFee = BigDecimal.valueOf(10.00);
+        BigDecimal deliveryFee = BigDecimal.valueOf(150.00);
+        BigDecimal appFee = BigDecimal.valueOf(50.00);
 
         // 4. Build the order header
         OrderTable order = OrderTable.builder()
@@ -107,6 +107,7 @@ public class OrderService {
                 .deliveryFee(deliveryFee)
                 .appFee(appFee)
                 .totalAmount(BigDecimal.ZERO) // will be computed below
+                .gstAmount(BigDecimal.ZERO) // will be computed below
                 .build();
 
         // 5. Process each cart item
@@ -140,7 +141,11 @@ public class OrderService {
         }
 
         // 6. Set computed total and persist
-        totalAmount = totalAmount.add(deliveryFee).add(appFee);
+        // Calculate 5% GST on the food subtotal
+        BigDecimal gstAmount = totalAmount.multiply(BigDecimal.valueOf(0.05));
+        totalAmount = totalAmount.add(gstAmount).add(deliveryFee).add(appFee);
+        
+        order.setGstAmount(gstAmount);
         order.setTotalAmount(totalAmount);
         OrderTable savedOrder = orderTableRepository.save(order);
 
@@ -247,6 +252,7 @@ public class OrderService {
                 order.getTotalAmount(),
                 order.getDeliveryFee(),
                 order.getAppFee(),
+                order.getGstAmount(),
                 order.getStatus().name(),
                 order.getPaymentMethod().name(),
                 itemDTOs

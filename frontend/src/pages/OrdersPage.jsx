@@ -183,8 +183,14 @@ const OrdersPage = () => {
                                                     <span>₹{item.itemTotal.toFixed(2)}</span>
                                                 </li>
                                             ))}
-                                            {(order.deliveryFee > 0 || order.appFee > 0) && (
+                                            {(order.deliveryFee > 0 || order.appFee > 0 || order.gstAmount > 0) && (
                                                 <>
+                                                    {order.gstAmount > 0 && (
+                                                        <li className="fee-line">
+                                                            <span>GST (5%)</span>
+                                                            <span>₹{order.gstAmount.toFixed(2)}</span>
+                                                        </li>
+                                                    )}
                                                     <li className="fee-line">
                                                         <span>Delivery Fee</span>
                                                         <span>₹{order.deliveryFee?.toFixed(2) || '0.00'}</span>

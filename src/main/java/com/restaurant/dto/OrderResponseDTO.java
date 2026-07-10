@@ -30,6 +30,7 @@ public record OrderResponseDTO(
         BigDecimal totalAmount,
         BigDecimal deliveryFee,
         BigDecimal appFee,
+        BigDecimal gstAmount,
         String status,
         String paymentMethod,
         List<OrderItemResponseDTO> items

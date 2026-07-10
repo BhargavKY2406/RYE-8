@@ -94,16 +94,20 @@ const CartSidebar = ({ isOpen, onClose, onOpenAuth }) => {
                                 <span>₹{getTotal().toFixed(2)}</span>
                             </div>
                             <div className="cart-fee">
+                                <span>GST (5%)</span>
+                                <span>₹{(getTotal() * 0.05).toFixed(2)}</span>
+                            </div>
+                            <div className="cart-fee">
                                 <span>Delivery Fee</span>
-                                <span>₹40.00</span>
+                                <span>₹150.00</span>
                             </div>
                             <div className="cart-fee">
                                 <span>App Fee</span>
-                                <span>₹10.00</span>
+                                <span>₹50.00</span>
                             </div>
                             <div className="cart-total">
                                 <span>Grand Total</span>
-                                <span id="cart-total-amount">₹{(getTotal() + 50).toFixed(2)}</span>
+                                <span id="cart-total-amount">₹{(getTotal() + (getTotal() * 0.05) + 150 + 50).toFixed(2)}</span>
                             </div>
                         </div>
                         <div className="form-group" style={{marginTop: '16px'}}>

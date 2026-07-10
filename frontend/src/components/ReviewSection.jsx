@@ -28,6 +28,10 @@ const ReviewSection = ({ restaurantId }) => {
     }, [restaurantId]);
 
     const fetchReviews = async () => {
+        if (restaurantId === null) {
+            setLoading(false);
+            return;
+        }
         setLoading(true);
         try {
             const res = await API.getReviews(restaurantId);

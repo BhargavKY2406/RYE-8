@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import CartSidebar from './components/CartSidebar';
 import AuthModal from './components/AuthModal';
 import PageLoader from './components/PageLoader';
+import ScrollToTop from './components/ScrollToTop';
 
 // Lazy load page components
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -19,6 +20,7 @@ const AppContent = () => {
 
     return (
         <div className="app-container">
+            <ScrollToTop />
             <Navbar 
                 onOpenCart={() => setIsCartOpen(true)} 
                 onOpenAuth={() => setIsAuthOpen(true)}

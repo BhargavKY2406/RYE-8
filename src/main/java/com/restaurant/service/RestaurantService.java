@@ -19,6 +19,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -59,12 +63,14 @@ public class RestaurantService {
     public List<RestaurantDTO> getTopRestaurants() {
         return restaurantRepository.findByIsTopRestaurantTrueAndIsActiveTrue().stream()
                 .map(this::mapRestaurantToDTO)
+                .filter(distinctByKey(RestaurantDTO::name))
                 .collect(Collectors.toList());
     }
 
     public List<MenuDTO> getBestDishes() {
         return menuRepository.findByIsBestDishTrueAndIsAvailableTrue().stream()
                 .map(this::mapMenuToDTO)
+                .filter(distinctByKey(MenuDTO::itemName))
                 .collect(Collectors.toList());
     }
 
@@ -72,6 +78,7 @@ public class RestaurantService {
         return restaurantRepository.findByIsActive(true)
                 .stream()
                 .map(this::mapRestaurantToDTO)
+                .filter(distinctByKey(RestaurantDTO::name))
                 .collect(Collectors.toList());
     }
 
@@ -100,6 +107,7 @@ public class RestaurantService {
         return restaurantRepository.findByNameContainingIgnoreCaseAndIsActive(name, true)
                 .stream()
                 .map(this::mapRestaurantToDTO)
+                .filter(distinctByKey(RestaurantDTO::name))
                 .collect(Collectors.toList());
     }
 
@@ -114,6 +122,7 @@ public class RestaurantService {
         return restaurantRepository.findByCuisineTypeIgnoreCaseAndIsActive(cuisineType, true)
                 .stream()
                 .map(this::mapRestaurantToDTO)
+                .filter(distinctByKey(RestaurantDTO::name))
                 .collect(Collectors.toList());
     }
 
@@ -260,5 +269,13 @@ public class RestaurantService {
                 .createdAt(review.getCreatedAt())
                 .username(review.getUser().getUsername())
                 .build();
+    }
+
+    /**
+     * Helper to filter out duplicates by a specific key.
+     */
+    public static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
+        Set<Object> seen = ConcurrentHashMap.newKeySet();
+        return t -> seen.add(keyExtractor.apply(t));
     }
 }

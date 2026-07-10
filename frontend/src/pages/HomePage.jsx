@@ -43,9 +43,20 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
                 API.getTopRestaurants(),
                 API.getBestDishes()
             ]);
-            if (res.success) setRestaurants(res.data);
-            if (topRes.success) setTopRestaurants(topRes.data);
-            if (bestRes.success) setBestDishes(bestRes.data);
+            
+            // Fail-safe to remove any duplicates that the backend might send
+            const filterUnique = (arr, key) => {
+                if (!arr) return [];
+                const seen = new Set();
+                return arr.filter(item => {
+                    const k = item[key];
+                    return seen.has(k) ? false : seen.add(k);
+                });
+            };
+
+            if (res.success) setRestaurants(filterUnique(res.data, 'name'));
+            if (topRes.success) setTopRestaurants(filterUnique(topRes.data, 'name'));
+            if (bestRes.success) setBestDishes(filterUnique(bestRes.data, 'itemName'));
         } catch (error) {
             console.error('Failed to fetch restaurants:', error);
         } finally {
@@ -57,12 +68,21 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
         setActiveCuisine(cuisine);
         setLoading(true);
         try {
+            const filterUnique = (arr, key) => {
+                if (!arr) return [];
+                const seen = new Set();
+                return arr.filter(item => {
+                    const k = item[key];
+                    return seen.has(k) ? false : seen.add(k);
+                });
+            };
+
             if (cuisine === 'All') {
                 const res = await API.getRestaurants();
-                setRestaurants(res.data || []);
+                setRestaurants(filterUnique(res.data, 'name') || []);
             } else {
                 const res = await API.filterByCuisine(cuisine);
-                setRestaurants(res.data || []);
+                setRestaurants(filterUnique(res.data, 'name') || []);
             }
         } catch (error) {
             console.error('Failed to filter:', error);

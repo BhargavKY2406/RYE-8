@@ -32,11 +32,24 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
     const cuisines = ['All', 'Indian', 'Italian', 'Chinese', 'Mexican', 'Japanese', 'American', 'Healthy', 'Dessert'];
 
     useEffect(() => {
+        // Optimistic UI: Immediately load cached data if it exists
+        const cachedData = localStorage.getItem('rye8_home_cache');
+        if (cachedData) {
+            try {
+                const parsed = JSON.parse(cachedData);
+                setRestaurants(parsed.restaurants || []);
+                setTopRestaurants(parsed.topRestaurants || []);
+                setBestDishes(parsed.bestDishes || []);
+                setLoading(false); // Instantly stop loading spinner!
+            } catch (e) {
+                console.error("Cache read error", e);
+            }
+        }
         fetchRestaurants();
     }, []);
 
     const fetchRestaurants = async () => {
-        setLoading(true);
+        if (restaurants.length === 0) setLoading(true); // Only show spinner if we have no cached data
         try {
             const [res, topRes, bestRes] = await Promise.all([
                 API.getRestaurants(),
@@ -54,9 +67,25 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
                 });
             };
 
-            if (res.success) setRestaurants(filterUnique(res.data, 'name'));
-            if (topRes.success) setTopRestaurants(filterUnique(topRes.data, 'name'));
-            if (bestRes.success) setBestDishes(filterUnique(bestRes.data, 'itemName'));
+            if (res.success) {
+                const uniqueRes = filterUnique(res.data, 'name');
+                setRestaurants(uniqueRes);
+            }
+            if (topRes.success) {
+                const uniqueTop = filterUnique(topRes.data, 'name');
+                setTopRestaurants(uniqueTop);
+            }
+            if (bestRes.success) {
+                const uniqueBest = filterUnique(bestRes.data, 'itemName');
+                setBestDishes(uniqueBest);
+            }
+            
+            // Save to cache for instant loading next time!
+            localStorage.setItem('rye8_home_cache', JSON.stringify({
+                restaurants: res.success ? filterUnique(res.data, 'name') : [],
+                topRestaurants: topRes.success ? filterUnique(topRes.data, 'name') : [],
+                bestDishes: bestRes.success ? filterUnique(bestRes.data, 'itemName') : []
+            }));
         } catch (error) {
             console.error('Failed to fetch restaurants:', error);
         } finally {

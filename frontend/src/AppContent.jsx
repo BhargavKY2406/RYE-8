@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartSidebar from './components/CartSidebar';
 import AuthModal from './components/AuthModal';
-import HomePage from './pages/HomePage';
-import RestaurantPage from './pages/RestaurantPage';
-import OrdersPage from './pages/OrdersPage';
+import PageLoader from './components/PageLoader';
 
-import AdminDashboard from './pages/AdminDashboard';
+// Lazy load page components
+const HomePage = lazy(() => import('./pages/HomePage'));
+const RestaurantPage = lazy(() => import('./pages/RestaurantPage'));
+const OrdersPage = lazy(() => import('./pages/OrdersPage'));
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
 const AppContent = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -23,12 +25,14 @@ const AppContent = () => {
             />
             
             <main className="content-wrap">
-                <Routes>
-                    <Route path="/" element={<HomePage searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
-                    <Route path="/restaurant/:id" element={<RestaurantPage onOpenAuth={() => setIsAuthOpen(true)} />} />
-                    <Route path="/orders" element={<OrdersPage />} />
-                    <Route path="/admin" element={<AdminDashboard />} />
-                </Routes>
+                <Suspense fallback={<PageLoader />}>
+                    <Routes>
+                        <Route path="/" element={<HomePage searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
+                        <Route path="/restaurant/:id" element={<RestaurantPage onOpenAuth={() => setIsAuthOpen(true)} />} />
+                        <Route path="/orders" element={<OrdersPage />} />
+                        <Route path="/admin" element={<AdminDashboard />} />
+                    </Routes>
+                </Suspense>
             </main>
             
             <Footer />

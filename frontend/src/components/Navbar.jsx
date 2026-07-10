@@ -47,20 +47,38 @@ const Navbar = ({ onOpenCart, onOpenAuth }) => {
                     style={{display: 'flex', alignItems: 'center', gap: '15px', textDecoration: 'none'}}
                 >
                     <div style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
-                        <div style={{
-                            fontSize: '28px', 
-                            fontWeight: '400', 
-                            letterSpacing: '8px', 
-                            fontFamily: '"Didot", "Bodoni MT", "Optima", "Times New Roman", serif',
-                            background: 'linear-gradient(110deg, #D4AF37 0%, #FFF2CD 35%, #D4AF37 70%, #8A6B0B 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                            color: 'transparent',
-                            display: 'inline-block',
-                            lineHeight: '1.1',
-                            paddingRight: '8px'
-                        }}>
+                        <style>
+                            {`
+                                @keyframes shimmerLogo {
+                                    0% { background-position: -200% center; }
+                                    100% { background-position: 200% center; }
+                                }
+                                .luxury-animated-logo {
+                                    font-size: 28px;
+                                    font-weight: 400;
+                                    letter-spacing: 8px;
+                                    font-family: "Didot", "Bodoni MT", "Optima", "Times New Roman", serif;
+                                    background: linear-gradient(
+                                        110deg,
+                                        #8A6B0B 0%,
+                                        #D4AF37 25%,
+                                        #FFF2CD 50%,
+                                        #D4AF37 75%,
+                                        #8A6B0B 100%
+                                    );
+                                    background-size: 200% auto;
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    background-clip: text;
+                                    color: transparent;
+                                    display: inline-block;
+                                    line-height: 1.1;
+                                    padding-right: 8px;
+                                    animation: shimmerLogo 6s linear infinite;
+                                }
+                            `}
+                        </style>
+                        <div className="luxury-animated-logo">
                             RYE-8
                         </div>
                         <span style={{

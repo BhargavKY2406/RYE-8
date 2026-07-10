@@ -63,6 +63,11 @@ const API = {
     createReservation: (body) => request('/reservations', { method: 'POST', body: JSON.stringify(body) }),
     getMyReservations: () => request('/reservations/my-reservations'),
     cancelReservation: (id) => request(`/reservations/${id}/cancel`, { method: 'PUT' }),
+
+    // Admin
+    getAdminUsers: () => request('/admin/users'),
+    getAdminOrders: () => request('/admin/orders'),
+    updateAdminOrderStatus: (orderId, status) => request(`/admin/orders/${orderId}/status?status=${encodeURIComponent(status)}`, { method: 'PUT' }),
 };
 
 export default API;

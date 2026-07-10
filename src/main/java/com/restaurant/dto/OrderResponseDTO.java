@@ -28,6 +28,8 @@ public record OrderResponseDTO(
         String restaurantName,
         LocalDateTime orderDate,
         BigDecimal totalAmount,
+        BigDecimal deliveryFee,
+        BigDecimal appFee,
         String status,
         String paymentMethod,
         List<OrderItemResponseDTO> items

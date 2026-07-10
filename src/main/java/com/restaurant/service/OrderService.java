@@ -95,12 +95,17 @@ public class OrderService {
             throw new IllegalArgumentException("Invalid payment method: " + dto.paymentMethod());
         }
 
+        BigDecimal deliveryFee = BigDecimal.valueOf(40.00);
+        BigDecimal appFee = BigDecimal.valueOf(10.00);
+
         // 4. Build the order header
         OrderTable order = OrderTable.builder()
                 .user(user)
                 .restaurant(restaurant)
                 .status(OrderStatus.PENDING)
                 .paymentMethod(paymentMethod)
+                .deliveryFee(deliveryFee)
+                .appFee(appFee)
                 .totalAmount(BigDecimal.ZERO) // will be computed below
                 .build();
 
@@ -135,6 +140,7 @@ public class OrderService {
         }
 
         // 6. Set computed total and persist
+        totalAmount = totalAmount.add(deliveryFee).add(appFee);
         order.setTotalAmount(totalAmount);
         OrderTable savedOrder = orderTableRepository.save(order);
 
@@ -239,6 +245,8 @@ public class OrderService {
                 order.getRestaurant().getName(),
                 order.getOrderDate(),
                 order.getTotalAmount(),
+                order.getDeliveryFee(),
+                order.getAppFee(),
                 order.getStatus().name(),
                 order.getPaymentMethod().name(),
                 itemDTOs

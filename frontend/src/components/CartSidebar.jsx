@@ -88,11 +88,25 @@ const CartSidebar = ({ isOpen, onClose, onOpenAuth }) => {
 
                 {cart.items.length > 0 && (
                     <div className="cart-footer">
-                        <div className="cart-total">
-                            <span>Total</span>
-                            <span id="cart-total-amount">₹{getTotal().toFixed(2)}</span>
+                        <div className="cart-total-breakdown">
+                            <div className="cart-subtotal">
+                                <span>Subtotal</span>
+                                <span>₹{getTotal().toFixed(2)}</span>
+                            </div>
+                            <div className="cart-fee">
+                                <span>Delivery Fee</span>
+                                <span>₹40.00</span>
+                            </div>
+                            <div className="cart-fee">
+                                <span>App Fee</span>
+                                <span>₹10.00</span>
+                            </div>
+                            <div className="cart-total">
+                                <span>Grand Total</span>
+                                <span id="cart-total-amount">₹{(getTotal() + 50).toFixed(2)}</span>
+                            </div>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group" style={{marginTop: '16px'}}>
                             <label>Payment Method</label>
                             <select value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
                                 <option value="CASH_ON_DELIVERY">Cash on Delivery</option>

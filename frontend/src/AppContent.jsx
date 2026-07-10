@@ -8,6 +8,8 @@ import HomePage from './pages/HomePage';
 import RestaurantPage from './pages/RestaurantPage';
 import OrdersPage from './pages/OrdersPage';
 
+import AdminDashboard from './pages/AdminDashboard';
+
 const AppContent = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isAuthOpen, setIsAuthOpen] = useState(false);
@@ -25,6 +27,7 @@ const AppContent = () => {
                     <Route path="/" element={<HomePage searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
                     <Route path="/restaurant/:id" element={<RestaurantPage onOpenAuth={() => setIsAuthOpen(true)} />} />
                     <Route path="/orders" element={<OrdersPage />} />
+                    <Route path="/admin" element={<AdminDashboard />} />
                 </Routes>
             </main>
             

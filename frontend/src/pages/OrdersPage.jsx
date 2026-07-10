@@ -183,10 +183,22 @@ const OrdersPage = () => {
                                                     <span>₹{item.itemTotal.toFixed(2)}</span>
                                                 </li>
                                             ))}
+                                            {(order.deliveryFee > 0 || order.appFee > 0) && (
+                                                <>
+                                                    <li className="fee-line">
+                                                        <span>Delivery Fee</span>
+                                                        <span>₹{order.deliveryFee?.toFixed(2) || '0.00'}</span>
+                                                    </li>
+                                                    <li className="fee-line">
+                                                        <span>App Fee</span>
+                                                        <span>₹{order.appFee?.toFixed(2) || '0.00'}</span>
+                                                    </li>
+                                                </>
+                                            )}
                                         </ul>
                                     </div>
                                     <div className="order-card-footer">
-                                        <span className="order-total-label">Total Amount</span>
+                                        <span className="order-total-label">Grand Total</span>
                                         <span className="order-total-amount">₹{order.totalAmount.toFixed(2)}</span>
                                     </div>
                                 </div>

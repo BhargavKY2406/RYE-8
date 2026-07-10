@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, User, Package, LogOut, Sun, Moon } from 'lucide-react';
+import { ShoppingCart, User, Package, LogOut, Sun, Moon, Shield } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
@@ -66,6 +66,12 @@ const Navbar = ({ onOpenCart, onOpenAuth }) => {
 
                     {user ? (
                         <>
+                            {user.role === 'ADMIN' && (
+                                <button className="cart-btn admin-btn" onClick={() => navigate('/admin')} title="Admin Dashboard">
+                                    <Shield size={20} />
+                                    <span className="hide-mobile" style={{color: 'var(--color-primary)'}}>Admin</span>
+                                </button>
+                            )}
                             <button className="cart-btn" onClick={handleOrdersClick} title="My Activity">
                                 <Package size={20} />
                                 <span className="hide-mobile">My Activity</span>

@@ -46,7 +46,7 @@ const Navbar = ({ onOpenCart, onOpenAuth }) => {
                     }}
                     style={{display: 'flex', alignItems: 'center', gap: '15px', textDecoration: 'none'}}
                 >
-                    <img src="/rye8-icon.png" alt="R8 Icon" style={{height: '42px', width: 'auto', objectFit: 'contain'}} />
+                    <img src="/r8-logo.svg" alt="R8 Icon" style={{height: '42px', width: 'auto', objectFit: 'contain'}} />
                     <div style={{display: 'flex', flexDirection: 'column'}}>
                         <span className="luxury-logo-text" style={{fontSize: '20px', lineHeight: '1', marginBottom: '4px'}}>RYE-8</span>
                         <span style={{fontSize: '10px', color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: '600'}}>Exceptional Meals, Every Time.</span>

@@ -34,22 +34,30 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
     useEffect(() => {
         // Optimistic UI: Immediately load cached data if it exists
         const cachedData = localStorage.getItem('rye8_home_cache');
+        let hasCache = false;
         if (cachedData) {
             try {
                 const parsed = JSON.parse(cachedData);
-                setRestaurants(parsed.restaurants || []);
-                setTopRestaurants(parsed.topRestaurants || []);
-                setBestDishes(parsed.bestDishes || []);
-                setLoading(false); // Instantly stop loading spinner!
+                if (parsed.restaurants && parsed.restaurants.length > 0) {
+                    setRestaurants(parsed.restaurants);
+                    setTopRestaurants(parsed.topRestaurants || []);
+                    setBestDishes(parsed.bestDishes || []);
+                    hasCache = true;
+                }
             } catch (e) {
                 console.error("Cache read error", e);
             }
         }
-        fetchRestaurants();
+        
+        // If we don't have cache, show loading spinner while fetching
+        fetchRestaurants(!hasCache);
     }, []);
 
-    const fetchRestaurants = async () => {
-        if (restaurants.length === 0) setLoading(true); // Only show spinner if we have no cached data
+    const fetchRestaurants = async (showSpinner = true) => {
+        if (showSpinner) {
+            setLoading(true);
+        }
+        
         try {
             const [res, topRes, bestRes] = await Promise.all([
                 API.getRestaurants(),

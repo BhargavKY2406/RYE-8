@@ -309,10 +309,21 @@
 /* Mobile Adjustments */
 @media (max-width: 992px) {
   .hero-visual {
-    display: none; /* Hide complex imagery on smaller screens for cleaner look */
+    height: 400px;
   }
   .hero-stats {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-visual {
+    height: 350px;
+    margin-top: 30px;
+  }
+  .hero-bento-grid {
+    gap: 12px;
+    padding: 0;
   }
 }

@@ -17,7 +17,7 @@ public class KeepAliveService {
     public void pingSelf() {
         try {
             // Ping the public URL so Render sees it as incoming external traffic
-            String url = "https://rye-8-backend.onrender.com/api/restaurants";
+            String url = "https://zyra-backend-snqj.onrender.com/api/restaurants";
             logger.info("Pinging self to keep backend awake at {}", url);
             restTemplate.getForObject(url, String.class);
             logger.info("Successfully pinged backend");

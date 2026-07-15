@@ -41,9 +41,9 @@ const Footer = () => {
                         Experience the best restaurants in your city. From local favorites to global cuisines, get it hot and fresh to your door.
                     </p>
                         <div className="social-links">
-                            <a href="#" className="social-link"><Hash size={20} /></a>
-                            <a href="#" className="social-link"><MessageCircle size={20} /></a>
-                            <a href="#" className="social-link"><Camera size={20} /></a>
+                            <a href="#!" onClick={(e) => e.preventDefault()} className="social-link"><Hash size={20} /></a>
+                            <a href="#!" onClick={(e) => e.preventDefault()} className="social-link"><MessageCircle size={20} /></a>
+                            <a href="#!" onClick={(e) => e.preventDefault()} className="social-link"><Camera size={20} /></a>
                         </div>
                     </div>
 
@@ -53,18 +53,18 @@ const Footer = () => {
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/">Restaurants</Link></li>
                             <li><Link to="/orders">My Orders</Link></li>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="#!" onClick={(e) => e.preventDefault()}>About Us</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-col">
                         <h4 className="footer-title">Cuisines</h4>
                         <ul className="footer-links">
-                            <li><a href="#">Indian</a></li>
-                            <li><a href="#">Italian</a></li>
-                            <li><a href="#">Chinese</a></li>
-                            <li><a href="#">American</a></li>
-                            <li><a href="#">Healthy</a></li>
+                            <li><a href="#!" onClick={(e) => e.preventDefault()}>Indian</a></li>
+                            <li><a href="#!" onClick={(e) => e.preventDefault()}>Italian</a></li>
+                            <li><a href="#!" onClick={(e) => e.preventDefault()}>Chinese</a></li>
+                            <li><a href="#!" onClick={(e) => e.preventDefault()}>American</a></li>
+                            <li><a href="#!" onClick={(e) => e.preventDefault()}>Healthy</a></li>
                         </ul>
                     </div>
 
@@ -90,8 +90,8 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <p>&copy; {new Date().getFullYear()} Zyra. All rights reserved.</p>
                     <div className="footer-legal">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                        <a href="#!" onClick={(e) => e.preventDefault()}>Privacy Policy</a>
+                        <a href="#!" onClick={(e) => e.preventDefault()}>Terms of Service</a>
                     </div>
                 </div>
             </div>

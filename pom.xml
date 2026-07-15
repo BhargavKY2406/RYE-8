@@ -61,6 +61,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- H2 Database for reliable hosting without Aiven -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- Lombok (reduces boilerplate: getters, setters, constructors) -->
         <dependency>
             <groupId>org.projectlombok</groupId>

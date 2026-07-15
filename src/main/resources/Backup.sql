@@ -1,5 +1,5 @@
 -- ================================================================
--- Rye-8 — Seed Data for restaurant_db (Updated Absolute Links)
+-- Zyra — Seed Data for restaurant_db (Updated Absolute Links)
 -- ================================================================
 
 -- ---- Restaurants ----

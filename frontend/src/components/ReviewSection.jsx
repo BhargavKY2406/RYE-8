@@ -17,7 +17,7 @@ const ReviewSection = ({ restaurantId }) => {
     // Home Reviews for premium display
     const homeReviews = [
         { reviewId: 'h1', username: 'Eleanor V.', rating: 5, comment: 'An absolutely flawless experience. The food arrived perfectly heated, and the packaging was pure quality. Will definitely order again for our next dinner party.', createdAt: new Date().toISOString() },
-        { reviewId: 'h2', username: 'Marcus T.', rating: 5, comment: 'Rye-8 sets a new standard for food delivery. The Truffle Smashburger from The Rustic Grill was Michelin-star quality.', createdAt: new Date(Date.now() - 86400000).toISOString() },
+        { reviewId: 'h2', username: 'Marcus T.', rating: 5, comment: 'Zyra sets a new standard for food delivery. The Truffle Smashburger from The Rustic Grill was Michelin-star quality.', createdAt: new Date(Date.now() - 86400000).toISOString() },
         { reviewId: 'h3', username: 'Sophia L.', rating: 4, comment: 'Incredible selection of premium restaurants. Delivery was exactly on time. Highly recommended for a special night in.', createdAt: new Date(Date.now() - 172800000).toISOString() }
     ];
 

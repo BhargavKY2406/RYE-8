@@ -25,7 +25,7 @@ const Footer = () => {
                                 lineHeight: '1.1',
                                 paddingRight: '8px'
                             }}>
-                                RYE-8
+                                ZYRA
                             </div>
                             <span style={{
                                 fontSize: '9px', 
@@ -81,14 +81,14 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Mail className="contact-icon" size={18} />
-                                <span>support@rye-8.com</span>
+                                <span>support@zyra.com</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Rye-8. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Zyra. All rights reserved.</p>
                     <div className="footer-legal">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>

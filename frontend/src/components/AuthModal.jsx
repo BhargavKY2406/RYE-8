@@ -50,7 +50,7 @@ const AuthModal = ({ isOpen, onClose }) => {
                 <button className="modal-close" onClick={onClose}><X size={24} /></button>
                 <div className="modal-header">
                     <h2>{isLogin ? 'Welcome Back' : 'Create Account'}</h2>
-                    <p>{isLogin ? 'Sign in to order your favorite food' : 'Join Rye-8 for the best local eats'}</p>
+                    <p>{isLogin ? 'Sign in to order your favorite food' : 'Join Zyra for the best local eats'}</p>
                 </div>
                 
                 {error && <div className="modal-error">{error}</div>}

@@ -35,7 +35,7 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
 
     useEffect(() => {
         // Optimistic UI: Immediately load cached data if it exists
-        const cachedData = localStorage.getItem('rye8_home_cache');
+        const cachedData = localStorage.getItem('zyra_home_cache');
         let hasCache = false;
         if (cachedData) {
             try {
@@ -79,7 +79,7 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
             }
             
             // Save to cache for instant loading next time
-            localStorage.setItem('rye8_home_cache', JSON.stringify({
+            localStorage.setItem('zyra_home_cache', JSON.stringify({
                 restaurants: res.success ? (res.data || []) : [],
                 topRestaurants: topRes.success ? (topRes.data || []) : [],
                 bestDishes: bestRes.success ? (bestRes.data || []) : []
@@ -278,7 +278,7 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
                             <h2 style={{marginBottom: '20px', fontFamily: 'Cinzel, serif'}}>Frequently Asked Questions</h2>
                             <div className="faq-item" style={{marginBottom: '20px', borderBottom: '1px solid var(--border-color)', paddingBottom: '15px'}}>
                                 <h4 style={{marginBottom: '8px', color: 'var(--color-primary)'}}>Do you offer table reservations?</h4>
-                                <p style={{color: 'var(--text-secondary)'}}>Yes! Rye-8 now offers exclusive Table Reservations directly through our platform for all participating Michelin-star restaurants. You can easily book a table, select your party size, and specify any special requests like anniversaries or dietary restrictions.</p>
+                                <p style={{color: 'var(--text-secondary)'}}>Yes! Zyra now offers exclusive Table Reservations directly through our platform for all participating Michelin-star restaurants. You can easily book a table, select your party size, and specify any special requests like anniversaries or dietary restrictions.</p>
                             </div>
                             <div className="faq-item" style={{marginBottom: '20px', borderBottom: '1px solid var(--border-color)', paddingBottom: '15px'}}>
                                 <h4 style={{marginBottom: '8px', color: 'var(--color-primary)'}}>How fast is your delivery?</h4>
@@ -286,7 +286,7 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
                             </div>
                             <div className="faq-item" style={{marginBottom: '20px', borderBottom: '1px solid var(--border-color)', paddingBottom: '15px'}}>
                                 <h4 style={{marginBottom: '8px', color: 'var(--color-primary)'}}>Are all these restaurants verified?</h4>
-                                <p style={{color: 'var(--text-secondary)'}}>Yes! Every restaurant on Rye-8 undergoes a strict quality check to ensure a premium dining experience. We partner exclusively with top-tier culinary institutions.</p>
+                                <p style={{color: 'var(--text-secondary)'}}>Yes! Every restaurant on Zyra undergoes a strict quality check to ensure a premium dining experience. We partner exclusively with top-tier culinary institutions.</p>
                             </div>
                             <div className="faq-item" style={{marginBottom: '20px', borderBottom: '1px solid var(--border-color)', paddingBottom: '15px'}}>
                                 <h4 style={{marginBottom: '8px', color: 'var(--color-primary)'}}>Can I schedule orders in advance?</h4>
@@ -316,13 +316,13 @@ const HomePage = ({ searchQuery, setSearchQuery }) => {
                                     <div style={{width: '50px', height: '50px', borderRadius: '50%', border: '1px solid var(--border-light)', background: 'var(--bg-surface)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)'}}>
                                         <Mail size={24} />
                                     </div>
-                                    <span style={{color: 'var(--text-primary)', fontWeight: '500'}}>concierge@rye8.com</span>
+                                    <span style={{color: 'var(--text-primary)', fontWeight: '500'}}>concierge@zyra.com</span>
                                 </div>
                                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px'}}>
                                     <div style={{width: '50px', height: '50px', borderRadius: '50%', border: '1px solid var(--border-light)', background: 'var(--bg-surface)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)'}}>
                                         <Phone size={24} />
                                     </div>
-                                    <span style={{color: 'var(--text-primary)', fontWeight: '500'}}>+91 800-RYE8-LUX</span>
+                                    <span style={{color: 'var(--text-primary)', fontWeight: '500'}}>+91 800-ZYRA-LUX</span>
                                 </div>
                                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px'}}>
                                     <div style={{width: '50px', height: '50px', borderRadius: '50%', border: '1px solid var(--border-light)', background: 'var(--bg-surface)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)'}}>

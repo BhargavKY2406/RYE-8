@@ -1,8 +1,8 @@
-# RYE-8: The Pinnacle of Fine Dining 🍽️✨
+# Zyra: The Pinnacle of Fine Dining 🍽️✨
 
-RYE-8 is a state-of-the-art, luxury restaurant application built to deliver Michelin-star dining experiences directly to users' doorsteps. 
+Zyra is a state-of-the-art, luxury restaurant application built to deliver Michelin-star dining experiences directly to users' doorsteps. 
 
-Featuring an ultra-premium, cinematic UI/UX and a robust, scalable backend, RYE-8 redefines the digital dining landscape.
+Featuring an ultra-premium, cinematic UI/UX and a robust, scalable backend, Zyra redefines the digital dining landscape.
 
 ## 🌟 Key Features
 
@@ -73,6 +73,6 @@ Featuring an ultra-premium, cinematic UI/UX and a robust, scalable backend, RYE-
 ---
 
 ## 🎨 Design Philosophy
-RYE-8 discards the heavy, bloated look of traditional delivery apps. It embraces minimalism, high contrast, and editorial typography. Every shadow, hover state, and font kerning choice has been optimized to emulate the physical menus of the world's most exclusive restaurants. 
+Zyra discards the heavy, bloated look of traditional delivery apps. It embraces minimalism, high contrast, and editorial typography. Every shadow, hover state, and font kerning choice has been optimized to emulate the physical menus of the world's most exclusive restaurants. 
 
 *Designed and Developed with uncompromising standards.*

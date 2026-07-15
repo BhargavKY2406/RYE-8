@@ -78,7 +78,7 @@ function cartReducer(state, action) {
 
 const getInitialState = () => {
     try {
-        const savedCart = localStorage.getItem('rye8_cart');
+        const savedCart = localStorage.getItem('zyra_cart');
         if (savedCart) {
             return JSON.parse(savedCart);
         }
@@ -98,7 +98,7 @@ export const CartProvider = ({ children }) => {
 
     // Save to local storage on change
     useEffect(() => {
-        localStorage.setItem('rye8_cart', JSON.stringify(state));
+        localStorage.setItem('zyra_cart', JSON.stringify(state));
     }, [state]);
 
     const addItem = (item) => {

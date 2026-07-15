@@ -61,7 +61,7 @@ const Navbar = ({ onOpenCart, onOpenAuth }) => {
                             lineHeight: '1.1',
                             paddingRight: '8px'
                         }}>
-                            RYE-8
+                            ZYRA
                         </div>
                         <span style={{
                             fontSize: '9px', 

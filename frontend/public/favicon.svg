@@ -11,15 +11,8 @@
         </linearGradient>
     </defs>
 
-    <!-- Sleek, High-End Geometric R -->
+    <!-- Sleek, High-End Geometric Z -->
     <g fill="url(#platinum)">
-        <!-- Vertical Stem -->
-        <rect x="300" y="240" width="120" height="544" rx="16" />
-        
-        <!-- Top Loop with Cutout -->
-        <path fill-rule="evenodd" d="M400,240 h180 c140,0 200,60 200,150 c0,90 -60,150 -200,150 h-180 v-300 z M400,340 v100 h160 c70,0 90,-20 90,-50 c0,-30 -20,-50 -90,-50 h-160 z" />
-        
-        <!-- Elegant Leg (with matching rounded corner look using a path) -->
-        <path d="M480,520 l200,264 h150 l-220,-280 z" />
+        <path d="M 240,240 h 544 v 120 l -424,304 h 424 v 120 h -544 v -120 l 424,-304 h -424 z" />
     </g>
 </svg>

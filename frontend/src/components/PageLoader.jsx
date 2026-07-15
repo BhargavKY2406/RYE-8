@@ -30,7 +30,7 @@ const PageLoader = () => {
                 paddingRight: '12px',
                 animation: 'shimmerPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
             }}>
-                RYE-8
+                ZYRA
             </div>
             <span style={{
                 marginTop: '12px',

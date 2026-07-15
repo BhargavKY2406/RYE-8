@@ -5,19 +5,19 @@
 -- ---- Restaurants ----
 INSERT INTO Restaurant (Name, CuisineType, DeliveryTime, Address, Rating, IsActive, ImagePath, IsTopRestaurant) VALUES
 ('The Saffron Estate',      'Indian',    30, '123 100ft Road, Indiranagar, Bangalore',      4.5, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRERBFxRTAbDzVZlXEuzzObsjVR3_T0IwguG6Qr5v0ANA&s=10', true),
-('L\'Antica Forno',    'Italian',   25, '45 80ft Road, Koramangala, Bangalore',        4.3, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpVin-3ug64d4d-fudjhbv-gMrMvA06PzwWm1RQHPOvg&s=10', true),
+('L''Antica Forno',    'Italian',   25, '45 80ft Road, Koramangala, Bangalore',        4.3, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpVin-3ug64d4d-fudjhbv-gMrMvA06PzwWm1RQHPOvg&s=10', true),
 ('The Imperial Wok',        'Chinese',   35, '78 11th Main, Jayanagar, Bangalore',          4.1, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoPkN5eu2wBgFfCvcRxf3o3q3DTAGsu7RLAKIfiKPYXA&s=10', true),
 ('Casa del Sol Azul',       'Mexican',   20, '12 Whitefield Main Road, Bangalore',          4.6, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMHQTIo40a9yPjDFRH_ppfV2_d3wRS98jbErv1rPalDA&s=10', false),
 ('Nobu Ateliers',      'Japanese',  40, '90 HSR Layout Sector 1, Bangalore',           4.7, true, 'https://kamereo.vn/blog/wp-content/uploads/2025/01/restaurant-design-1.jpg', false),
 ('The Reserve Grill',       'American',  15, '56 MG Road, Bangalore',                       4.2, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMjoZkU0A_Vpq2nqVy-O5mZdf4MuK5QU3qe1k4njvnqw&s=10', false),
-('Maharaja\'s Court',       'Indian',    30, '34 Brigade Road, Bangalore',                  4.4, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY9EWRkJtAXpgNDa2qDhKMGFPyKMmkp-EgBnR4AnX1GQ&s=10', false),
+('Maharaja''s Court',       'Indian',    30, '34 Brigade Road, Bangalore',                  4.4, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY9EWRkJtAXpgNDa2qDhKMGFPyKMmkp-EgBnR4AnX1GQ&s=10', false),
 ('Il Tartufo',      'Italian',   28, '67 Sampige Road, Malleshwaram, Bangalore',    4.0, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk9-1vbRI3jX9JVxUr0-_yeGQUZzcUfVZI7iBK2qhWlA&s=10', false),
 ('Aura Botanica',    'Vegan',     35, '101 JP Nagar 2nd Phase, Bangalore',           4.8, true, 'https://b.zmtcdn.com/data/pictures/6/18353106/20c64ea1876e542128db2f4b43a3f41b_featured_v3.jpg', false),
-('L\'Éclair de Génie',     'Dessert',   20, '15 Electronic City Phase 1, Bangalore',       4.9, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF4QjFXAvvYPHqclUtn6gG--OkK0RUFcrphcOvPxI0MQ&s=10', false),
-('L\'Ambroisie',     'French',    45, '55 BTM Layout 1st Stage, Bangalore',          4.6, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCP1To31U34DVEheW-zymaf-q4H4OEkXH0wBB1kQ2Mew&s=10', false),
+('L''Éclair de Génie',     'Dessert',   20, '15 Electronic City Phase 1, Bangalore',       4.9, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF4QjFXAvvYPHqclUtn6gG--OkK0RUFcrphcOvPxI0MQ&s=10', false),
+('L''Ambroisie',     'French',    45, '55 BTM Layout 1st Stage, Bangalore',          4.6, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCP1To31U34DVEheW-zymaf-q4H4OEkXH0wBB1kQ2Mew&s=10', false),
 ('The Oak Room Grill',  'American',  25, '100 Marathahalli ORR, Bangalore',             4.9, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1hksaaeDgWiUHNoV8pXH3TXxgGAj3BJvnsrcu7U8VxA&s=10', false),
 ('Oceanic Eminence',  'Seafood',   45, '200 Bellandur Main Road, Bangalore',          4.8, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF8wtX6HTBINJwv23-EI9_dYgSAJ94KDN0KSKEaZmrzA&s=10', false),
-('Café de l\'Opéra',     'Cafe',      15, '50 Sarjapur Road, Bangalore',                 4.7, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjWx60I9OGPi5dWdLwcialxCrPc5dedvGEh88X9o0vkg&s=10', false),
+('Café de l''Opéra',     'Cafe',      15, '50 Sarjapur Road, Bangalore',                 4.7, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjWx60I9OGPi5dWdLwcialxCrPc5dedvGEh88X9o0vkg&s=10', false),
 ('Darbar Royal',   'Indian',    40, '400 Bannerghatta Road, Bangalore',            4.8, true, 'https://assets.architecturaldigest.in/photos/661914a9f7fde7d31839ec01/16:9/w_1280,c_limit/Untitled%20design%20(4).jpg', false),
 ('The Wellness Estate',    'Healthy',   20, '202 Richmond Road, Bangalore',                4.5, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKo9Tbn-2JPA71wG13rlPQR6pD0BHgn8yN5t_ctXXyBg&s=10', false);
 
